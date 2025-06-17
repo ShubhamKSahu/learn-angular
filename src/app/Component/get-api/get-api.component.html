@@ -1,0 +1,35 @@
+<p>get-api works!</p>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success ms-2" (click)="getUsers()">Load Users</button>
+        <button class="btn btn-success ms-2" (click)="getAlbums()">Load Albums</button>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-8">
+        <table class="table table-bordered mt-2 ms-2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+        <select>
+            <option *ngFor="let album of albumList">{{album.title}}</option>
+        </select>
+    </div>
+</div>

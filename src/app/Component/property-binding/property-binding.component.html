@@ -1,0 +1,22 @@
+<p>property-binding works!</p>
+
+<!-- Interpolation -->
+ <div class="row">
+    <div class="col-6">
+        <p>Username is : {{username}}</p>
+        <p>Age is : {{age}}</p>
+        <p>Country is : {{country}}</p>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-6">
+        <input type="text" [value]="inputText">
+        <button (click)="welcomeMessgae()">Click here</button>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="username"]>
+    </div>
+ </div>
+

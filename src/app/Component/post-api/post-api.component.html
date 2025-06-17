@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-8 text-center heading">
+        Post API Integration using Template form
+    </div>
+    <div class="col-4 mt-1">
+        <button class="btn btn-success" (click)="getUserList()">Load Users</button>
+    </div>
+</div>
+<div class="row pt-2 m-2">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-warning text-center">
+                <h5>User List</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>User Name</th>
+                            <th>E-Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of userList">
+                            <td>{{user.id}}</td>
+                            <td>{{user.name}}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-warning text-center">
+                <h5>Create new car</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <label>Reg no</label>
+                        <input type="text" [(ngModel)]="payload.RegNo"  class="form-control" placeholder="Enter car reg number">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Model</label>
+                        <input type="text" [(ngModel)]="payload.Model"  class="form-control" placeholder="Enter model name">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Brand</label>
+                        <input type="text" [(ngModel)]="payload.Brand"  class="form-control" placeholder="Enter brand name">
+                    </div>
+                     <div class="col-6 mt-2">
+                        <label>Year</label>
+                        <input type="text" [(ngModel)]="payload.Year"  class="form-control" placeholder="Enter Year">
+                    </div>
+                     <div class="col-6 mt-2">
+                        <label>Color</label>
+                        <input type="text" [(ngModel)]="payload.Color"  class="form-control" placeholder="Enter Color">
+                    </div>
+                     <div class="col-6 mt-2">
+                        <label>Enter daily rate</label>
+                        <input type="text" [(ngModel)]="payload.DailyRate"  class="form-control" placeholder="Enter daily rate">
+                    </div>
+                     <div class="col-6 mt-2">
+                        <label>Car image url</label>
+                        <input type="text" [(ngModel)]="payload.CarImage"  class="form-control" placeholder="Enter car imahe url">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-2 text-center">
+                        <button class="btn btn-secondary m-2">Reset form</button>
+                        <button class="btn btn-success m-2" (click)="onSaveCar()">Save car</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<p>ng-if works!</p>
+<div class="row">
+    <div class="col-3" style="background-color: blue;">
+      Div1
+    </div>
+    <div class="col-6" style="background-color: aquamarine;" *ngIf="number1 == number2">
+      Div2
+    </div>
+  </div>
+  <button class="btn btn-primary" style="margin: 1.5px;" (click)="hideDiv()">Hide</button>
+  <button class="btn btn-success" style="margin: 1.5px;" (click)="showDiv()">Show</button>
+  
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="number1">
+        <input type="text" [(ngModel)]="number2">
+    </div>
+</div>
