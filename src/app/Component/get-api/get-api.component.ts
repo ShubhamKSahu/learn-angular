@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-get-api',
@@ -9,10 +9,16 @@ import { Component } from '@angular/core';
   templateUrl: './get-api.component.html',
   styleUrl: './get-api.component.css'
 })
-export class GetApiComponent {
+export class GetApiComponent implements OnInit, AfterViewInit{
   userList: any[]= [];
   albumList: any[] =[];
  constructor(private http: HttpClient){}
+ ngOnInit(): void {
+     this.getUsers();
+ }
+ ngAfterViewInit(): void {
+     console.log("Ng after view init", performance.now())
+ }
   getUsers(){
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res: any)=>{
       this.userList = res;
